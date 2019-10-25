@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Renticle</string>
+    <string name="hi">Hi!</string>
+    <string name="login_to_continue">Login to continue</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_up">Signup</string>
+    <string name="login">Login</string>
+    <string name="go_to_forgot_password_activity">Go to Forgot Password Activity</string>
+    <string name="sign_in_as_user">Sign In as a User</string>
+    <string name="sign_in_as_admin">Sign in as an Admin</string>
+    <string name="select_option_string">Select an option from below:</string>
+    <string name="main_activity_string">Main Activity Launched</string>
+    <string name="forgot_password_msg">Enter the email address \nassociated with the account</string>
+    <string name="email_link_string">We will be sending you a link to reset \nyour password to your email</string>
+    <string name="enter_email">Enter email address</string>
+    <string name="send_string">Send</string>
+    <string name="retype_password">Retype Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="gender">Gender:</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="register">Register</string>
+    <string name="find_cars">Find Cars</string>
+    <string name="api_key">AIzaSyBYQFMoXvQGCUf6E-8jkY6_ihgmX6bJx0M</string>
+    <string-array name="cities">
+        <item>Montreal</item>
+        <item>Toronto</item>
+        <item>Brampton</item>
+        <item>Quebec City</item>
+        <item>Mont Tremblant</item>
+        <item>Montreal-Ouest</item>
+        <item>St. Michel</item>
+        <item>Greenfield Park</item>
+    </string-array>
+</resources>
