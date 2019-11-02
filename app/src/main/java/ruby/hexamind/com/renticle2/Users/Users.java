@@ -1,4 +1,4 @@
-package ruby.hexamind.com.renticle2;
+package ruby.hexamind.com.renticle2.Users;
 
 public class Users {
     private String username;

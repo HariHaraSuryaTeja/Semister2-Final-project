@@ -1,4 +1,4 @@
-package ruby.hexamind.com.renticle2;
+package ruby.hexamind.com.renticle2.Utils;
 
 public class Roles {
     public static final String EMPLOYEE = "employee";

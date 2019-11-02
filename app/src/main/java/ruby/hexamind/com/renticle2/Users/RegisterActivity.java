@@ -1,7 +1,6 @@
-package ruby.hexamind.com.renticle2;
+package ruby.hexamind.com.renticle2.Users;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -11,7 +10,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.google.gson.Gson;
+import androidx.appcompat.app.AppCompatActivity;
+import ruby.hexamind.com.renticle2.R;
+import ruby.hexamind.com.renticle2.PostLogin.PostLoginActivity;
+import ruby.hexamind.com.renticle2.Utils.Roles;
 
 public class RegisterActivity extends AppCompatActivity {
     EditText username, password, confirmPassword, email, contactNo;
@@ -48,11 +50,9 @@ public class RegisterActivity extends AppCompatActivity {
                     }
 
                     Users users = new Users(username.getText().toString(), password.getText().toString(), email.getText().toString(), contactNo.getText().toString(), selectedGender, Roles.CUSTOMER);
-                    Gson gson = new Gson();
-                    String userJson = gson.toJson(users);
 
                     Intent intent = new Intent(RegisterActivity.this, PostLoginActivity.class);
-                    intent.putExtra("userData", userJson);
+                    intent.putExtra("userArray", new Users[]{users});
                     startActivity(intent);
                 } else {
                     if (username.getText().length() <= 0) {

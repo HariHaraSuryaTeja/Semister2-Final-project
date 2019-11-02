@@ -9,20 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PostLoginActivity"></activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".Main.MainActivity"></activity>
+        <activity android:name=".PostLogin.PostLoginActivity" />
+        <activity android:name=".Users.RegisterActivity" />
+        <activity android:name=".ForgotPassword.ForgotPasswordActivity" />
+        <activity android:name=".CarSelect.CarSelectActivity" />
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".Users.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".StartActivity"
+            android:name=".Start.StartActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
