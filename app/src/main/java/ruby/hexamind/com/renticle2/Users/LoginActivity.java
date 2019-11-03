@@ -19,6 +19,7 @@ import ruby.hexamind.com.renticle2.ForgotPassword.ForgotPasswordActivity;
 import ruby.hexamind.com.renticle2.PostLogin.PostLoginActivity;
 import ruby.hexamind.com.renticle2.R;
 import ruby.hexamind.com.renticle2.Vehicles.Vehicle;
+import ruby.hexamind.com.renticle2.admin.AdminMainActivity;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText username, password;
@@ -56,29 +57,37 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
             }
         });
+        if (getIntent().getStringExtra("intent").equals("admin"))
+            login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(LoginActivity.this, AdminMainActivity.class));
+                }
+            });
+        else
+            login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Vehicle[] vehicles = new Vehicle[3];
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Vehicle[] vehicles = new Vehicle[3];
+                    List<Drawable> viper = new ArrayList<>();
+                    List<Drawable> ford = new ArrayList<>();
+                    List<Drawable> porsche = new ArrayList<>();
+                    viper.add(getDrawable(R.drawable.viper));
+                    ford.add(getDrawable(R.drawable.ford));
+                    porsche.add(getDrawable(R.drawable.porsche));
+                    vehicles[0] = new Vehicle("H5T 9K4", "Dodge", "Viper", "3.2", "Automatic", 20.9, 2, 2019, "GREEN", viper);
+                    vehicles[1] = new Vehicle("I8W 0P2", "Ford Mustang", "Shelby GT 250", "3.2", "Automatic", 20.9, 2, 2019, "BLACK", ford);
+                    vehicles[2] = new Vehicle("J1V 1O6", "Porsche", "Cayanne", "3.2", "Automatic", 20.9, 6, 2019, "WHITE", porsche);
+                    Intent intent = new Intent(LoginActivity.this, PostLoginActivity.class);
+                    intent.putExtra("userData", username.getText().toString());
+                    intent.putExtra("vehicleArray", vehicles);
+                    startActivity(intent);
 
-                List<Drawable> viper = new ArrayList<>();
-                List<Drawable> ford = new ArrayList<>();
-                List<Drawable> porsche = new ArrayList<>();
-                viper.add(getDrawable(R.drawable.viper));
-                ford.add(getDrawable(R.drawable.ford));
-                porsche.add(getDrawable(R.drawable.porsche));
-                vehicles[0] = new Vehicle("H5T 9K4", "Dodge", "Viper", "3.2", "Automatic", 20.9, 2, 2019, "GREEN", viper);
-                vehicles[1] = new Vehicle("I8W 0P2", "Ford Mustang", "Shelby GT 250", "3.2", "Automatic", 20.9, 2, 2019, "BLACK", ford);
-                vehicles[2] = new Vehicle("J1V 1O6", "Porsche", "Cayanne", "3.2", "Automatic", 20.9, 6, 2019, "WHITE", porsche);
-                Intent intent = new Intent(LoginActivity.this, PostLoginActivity.class);
-                intent.putExtra("userData", username.getText().toString());
-                intent.putExtra("vehicleArray", vehicles);
-                startActivity(intent);
+                }
 
-            }
-        });
 
+            });
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,6 +97,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private String getImagePath(int resourceId) {
-        return Uri.parse("android.resource://"+R.class.getPackage().getName()+"/" +resourceId).toString();
+        return Uri.parse("android.resource://" + R.class.getPackage().getName() + "/" + resourceId).toString();
     }
 }

@@ -7,7 +7,8 @@
     tools:context=".admin.AdminMainActivity">
 
     <LinearLayout
-        android:id="@+id/addCar"
+
+        android:id="@+id/addCarlayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -22,12 +23,19 @@
             android:src="@drawable/ic_directions_car_black_24dp" />
 
         <TextView
+            android:id="@+id/addCar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add a car"
+            android:clickable="true"
             android:textColor="@android:color/primary_text_dark"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="List"
+            android:id="@+id/cust_List"></Button>
     </LinearLayout>
 
 </RelativeLayout>

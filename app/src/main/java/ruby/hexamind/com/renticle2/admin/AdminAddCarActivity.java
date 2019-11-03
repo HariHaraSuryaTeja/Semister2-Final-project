@@ -261,6 +261,8 @@ public class AdminAddCarActivity extends AppCompatActivity {
                 drawables.add(selectedDrawable);
                 addVehicleDetails(vehicleNo.getText().toString(), vehicleName.getText().toString(), vehicleModel.getText().toString(), engine.getText().toString(),
                         selectedTransmission, Double.parseDouble(costPerMile.getText().toString()), Integer.parseInt(noOfSeats.getText().toString()), Integer.parseInt(year.getText().toString()), color.getText().toString(), drawables);
+
+                
                 Toast.makeText(AdminAddCarActivity.this, "The details of the vehicle were added successfully", Toast.LENGTH_SHORT).show();
 
                 finish();
